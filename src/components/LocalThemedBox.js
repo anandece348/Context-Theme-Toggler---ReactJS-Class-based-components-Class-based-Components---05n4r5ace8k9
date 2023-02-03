@@ -1,9 +1,10 @@
-import React from 'react';
-
+import React, { useContext, useEffect, useState } from 'react';
+import { ThemeContext } from './ThemeProvider';
 
 const LocalThemedBox = () => {
-    const {theme} = useContext(ThemeContext);
-   
+
+     const {theme} = useContext(ThemeContext);
+    // console.log(theme);
 
     const [localTheme,setLocalTheme] = useState(theme);
 
@@ -30,13 +31,11 @@ const initial = localTheme === 'dark'? 'Toggle local theme to light' : 'Toggle l
             setLocalBtn('Toggle local theme to dark');
         }
     }
-
 return(
-    <div style={{width:'200px',height:'200px',border:'2px solid green'}} id="local-themed-box">
+    <div style={{width:'200px',height:'200px',border:'2px solid green'}} id="local-themed-box" className={'bg-'+localTheme}>
         {/* Write code below this line */}
         <p id="local-themed-text-container" className={'txt-'+localTheme}>hello</p>
         <button id="local-theme-toggler" onClick={localThemefn} className={`btn btn-${localTheme} txt-${localTheme}`}>{localBtn}</button>
-        
     </div>
 )
 }

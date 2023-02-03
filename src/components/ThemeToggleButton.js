@@ -7,7 +7,7 @@ const ThemeToggleButton = () =>{
     //const [theme1,setTheme1] = useState('light');
 
     const {theme,setTheme} = useContext(ThemeContext);
-   
+    // console.log(theme);
 
     let global = () =>{
 
